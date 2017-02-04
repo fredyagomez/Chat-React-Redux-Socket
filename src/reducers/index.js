@@ -13,15 +13,6 @@ const AppState = (state = [], action) => {
   }
 };
 
-//const sended_Messages = (state = 'first message', action) => {
-//  switch (action.type) {
-//    case SEND_MESSAGES:
-//      return action.message;
-//    default:
-//      return state;
-//  }
-//};
-
 const rootReducer = combineReducers({
   AppState
 });

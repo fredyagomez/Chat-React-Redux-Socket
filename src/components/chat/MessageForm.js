@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import FormField from 'grommet/components/FormField';
+
 export default class MessageForm extends React.Component {
   static propTypes = { user: PropTypes.string.isRequired,
     onMessageSubmit: PropTypes.func.isRequired

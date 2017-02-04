@@ -1,11 +1,7 @@
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import { createHistory, useQueries } from 'history';
 let history = useQueries(createHistory)();
 
-// We have our own history implementation so we can insert a prefix.
-// This allows sharing web servers and using sub domains with less
-// application awareness.
 
 let appPrefix = '';
 
