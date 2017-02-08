@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react';
-import Heading from 'grommet/components/Heading';
 import Box from 'grommet/components/Box';
 import Layer from 'grommet/components/Layer';
 import Article from 'grommet/components/Article';
 import Section from 'grommet/components/Section';
 import Headline from 'grommet/components/Headline';
-import { announce } from 'grommet/utils/Announcer';
 import Pulse from 'grommet/components/icons/Pulse';
 import CircleQuestionIcon from 'grommet/components/icons/base/CircleQuestion';
 import Chat from './Chat';
@@ -34,7 +32,6 @@ class App extends React.Component {
     this._userJoined = this._userJoined.bind(this);
     this._userLeft = this._userLeft.bind(this);
     this._handleMessageSubmit = this._handleMessageSubmit.bind(this);
-    this.joinRoom  = this.joinRoom.bind(this);
   }
   componentDidMount () {
     socket.on('init', this._initialize);
@@ -42,10 +39,6 @@ class App extends React.Component {
     socket.on('user:join', this._userJoined);
     socket.on('user:left', this._userLeft);
   }  
-  _initialize(data) {
-    let {users, name} = data;
-    this.setState({users, user: name});
-  }
   _messageRecieve(message) {
     this.props.dispatch(sendMessages(message));
   }
@@ -70,32 +63,16 @@ class App extends React.Component {
   }
   _Close () {
     this.setState({chatFlag: false});
-    this.setState({NoAgent: false});
   }
   handleClick() {
-    if (this.state.user == "Guest 1" || this.state.user == "Guest 2") {
-      this.setState({chatFlag: true});
-      announce('You are joining the chat');
-    } else {
-      announce('No agent available');
-      this.setState({chatFlag: true});
-    }
-  } 
-  joinRoom() {
+    this.setState({chatFlag: true});
   }
+  _initialize(data) {
+    console.log(data);
+	let {users, name} = data;
+    this.setState({users, user: name});
+  }  
   render() {
-	let NoAgent;
-    if (this.state.NoAgent) {
-      NoAgent = (
-        <Layer align="center" closer={true} onClose={this._Close}>
-          <Heading tag="h4"><br/>All our agents are currently busy or attending other customers. We have captured your email and we will contact you to follow up.<br/><br/> Sorry for the incovenience.</Heading>
-        </Layer>
-      );
-    } else {
-      NoAgent = (
-      <div></div>
-      );
-    }
     let chatWindow;
     if (this.state.chatFlag) {
       chatWindow = (
@@ -112,7 +89,6 @@ class App extends React.Component {
 	<Article className="home" scrollStep={false}>	
       <div>
       {chatWindow}
-      {NoAgent}
         <Box>
           <Section appCentered={true} pad="none" className="home__section"
             backgroundImage={`url(${history.makeHref('/img/slide-4I.jpg')})`} colorIndex="light"
