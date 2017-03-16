@@ -22,7 +22,7 @@ npm start
 Production
 
 ```bash
-npm run dist
+npm run build
 node server.js
 ```
 
