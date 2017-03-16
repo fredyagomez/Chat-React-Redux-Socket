@@ -21,7 +21,7 @@ const store = createStore(
 );
 
 
-require('./img/favicon.ico');
+require('../img/favicon.ico');
 let element = document.getElementById('app');
 ReactDom.render(
   <Provider store={store}>
