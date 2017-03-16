@@ -12,26 +12,18 @@ Share this link with another person or open two broswers to test the app: http:/
 Development Front End
 
 ```bash
-- Clone or download repository
-- cd Char-React-Redux-Socket
-- npm install
-- npm start
+##Clone or download repository
+
+cd Char-React-Redux-Socket
+npm install
+npm start
 ```
 
 Production
 
 ```bash
-- npm run dist
-```
-
-Move compiled files from "/dist" to "backend/dist"
-
-Development Back End
-
-```bash
-- cd backend
-- npm install
-- node server.js
+npm run dist
+node server.js
 ```
 
 Open a web browser and navigate to [http://localhost:1337]
