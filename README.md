@@ -9,7 +9,7 @@ Share this link with another person or open two broswers to test the app: http:/
 
 # Instructions
 
-Development Front End
+##Development Front End
 
 ```bash
 ##Clone or download repository
@@ -19,7 +19,7 @@ npm install
 npm start
 ```
 
-Production
+##Production
 
 ```bash
 npm run build
@@ -28,6 +28,19 @@ node server.js
 
 Open a web browser and navigate to [http://localhost:1337]
 
+
+##Got Docker?
+
+See more information in Dockerfile
+
+```bash
+##Clone or download repository
+cd Char-React-Redux-Socket
+docker build -t chat_react .
+docker run -d -p 1337:1337 chat_react
+```
+
+Open a web browser and navigate to [http://localhost:1337]
 
 # Issues?
 
