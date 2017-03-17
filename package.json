@@ -29,7 +29,6 @@
   "author": "Fredy A Gomez",
   "license": "MIT",
   "dependencies": {
-    "@hpe/millstone": "2.3.7",
     "babel-polyfill": "6.22.0",
     "express": "4.15.2",
     "grommet": "1.2.1",
