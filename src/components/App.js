@@ -94,7 +94,7 @@ class App extends React.Component {
             backgroundImage={`url(${history.makeHref('/img/slide-4I.jpg')})`} colorIndex="light"
             primary={true} full={true} justify="end" align="center" > 
               <Headline size="small" strong={true} align="center" margin="none"><font size="20">
-                Help ?<br/></font>
+                Help ? Click here<br/></font>
               </Headline>
               <Box basis="1/3" pad={{"horizontal": "medium", "vertical": "small"}}>
                 <Pulse icon={<CircleQuestionIcon />} onClick={this.handleClick}/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
